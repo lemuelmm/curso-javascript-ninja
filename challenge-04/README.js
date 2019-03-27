@@ -1,4 +1,4 @@
-<script>
+
 
 /*
 Declare uma variável chamada `isTruthy`, e atribua a ela uma função que recebe
@@ -54,9 +54,8 @@ var carro = {
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudaCor = (cor) => {
-    carro.cor = cor;
-}
+carro.mudaCor = (cor) => carro.cor = cor;
+
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
@@ -80,7 +79,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-carro.obterMarcaModelo = () => "Esse carro é um " + carro.obterMarca() + " " + carro.obterMarcaModelo;
+carro.obterMarcaModelo = () => "Esse carro é um " + carro.Marca + " " + carro.Modelo;
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -102,18 +101,16 @@ carro.addPessoa = (numPessoa) => {
     if(numPessoa<=carro.assentos-carro.quantidadedePessoas){
         carro.quantidadedePessoas+=numPessoa;
         return "Já temos " + carro.quantidadedePessoas + " pessoas no carro!"
-    }else if(numPessoa>=carro.assentos-carro.quantidadedePessoas
-            || (carro.assentos-carro.quantidadedePessoas)>1){
-        return "Só cabem mais " + carro.assentos-carro.quantidadedePessoas + " pessoas!";
-    }else if(numPessoa>=carro.assentos-carro.quantidadedePessoas
-            || (carro.assentos-carro.quantidadedePessoas)==1){
-        return "Só cabem mais " + carro.assentos-carro.quantidadedePessoas + " pessoa!";
-    }else if(numPessoa>=carro.assentos-carro.quantidadedePessoas){
+    }else if(numPessoa>(carro.assentos-carro.quantidadedePessoas)
+            && (carro.assentos-carro.quantidadedePessoas)>1){
+        return "Só cabem mais " + (carro.assentos-carro.quantidadedePessoas) + " pessoas!";
+    }else if(numPessoa>(carro.assentos-carro.quantidadedePessoas)
+            && (carro.assentos-carro.quantidadedePessoas)==1){
+        return "Só cabem mais " + (carro.assentos-carro.quantidadedePessoas) + " pessoa!";
+    }else if(numPessoa>(carro.assentos-carro.quantidadedePessoas)){
         return "O carro já está lotado!";
     }
 }
-console.log(carro.addPessoa(3));
-console.log(carro.addPessoa(3));
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -123,39 +120,42 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-
+console.log(carro.cor);
 
 // Mude a cor do carro para vermelho.
-
+carro.mudaCor("preto");
 
 // E agora, qual a cor do carro?
-
+console.log(carro.cor);
 
 // Mude a cor do carro para verde musgo.
-
+carro.mudaCor("verde musgo");
 
 // E agora, qual a cor do carro?
-
+console.log(carro.cor);
 
 // Qual a marca e modelo do carro?
-
+carro.marca = "fiesta";
+carro.modelo = "2002";
+console.log(carro.marca);
+console.log(carro.modelo);
 
 // Adicione 2 pessoas no carro.
-
+console.log(carro.addPessoa(2));
 
 // Adicione mais 4 pessoas no carro.
-
+console.log(carro.addPessoa(4));
 
 // Faça o carro encher.
-
+console.log(carro.addPessoa(3));
 
 // Tire 4 pessoas do carro.
-
+console.log(carro.addPessoa(-4));
 
 // Adicione 10 pessoas no carro.
-
+console.log(carro.addPessoa(10));
 
 // Quantas pessoas temos no carro?
+console.log(carro.quantidadedePessoas);
 
 
-</script>
