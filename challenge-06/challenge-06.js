@@ -56,7 +56,7 @@ var i=20;
 while(i<=30){
     console.log(i);
     i++;
-};
+}
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -91,7 +91,7 @@ function convertToHex(cor){
         default : 
             return console.log("Não temos o equivalente hexadecimal para " + cor + ".");
     }
-};
+}
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
