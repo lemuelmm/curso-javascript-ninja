@@ -9,11 +9,10 @@ A função deverá retornar o array atualizado.
 */
 function addItem(aray,arg){
     
-    for(var i=0; i<aray.length; i){
+    for(var i=0; i<aray.length; i++){
         if(aray[i]===null){
             aray[i]=arg;
         }break;
-        i++;
     }
     return aray;
 }
