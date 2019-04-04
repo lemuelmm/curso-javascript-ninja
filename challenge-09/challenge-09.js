@@ -46,7 +46,7 @@
         return sum();
         function sum() {
             return number1 + number2;
-        };
+        }
     }
     myFunction3();
 
