@@ -27,10 +27,10 @@
     function myFunction2() {
         var number1 = 10;
         var number2 = 20;
-        console.log( 'A soma de 10 e 20 é igual a', sum ? sum() : undefined );
         var sum = function sum() {
             return number1 + number2;
         };
+        console.log( 'A soma de 10 e 20 é igual a', sum ? sum() : undefined );
         return sum();
     }
     myFunction2();
